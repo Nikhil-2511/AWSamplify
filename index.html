@@ -1,5 +1,17 @@
 <!doctype html>
 <!-- Website template by freewebsitetemplates.com -->
+
+import { uploadData } from 'aws-amplify/storage';
+
+try {
+  const result = await uploadData({
+    key: filename,
+    data: file
+  }).result;
+  console.log('Succeeded: ', result);
+} catch (error) {
+  console.log('Error : ', error);
+}
 <html>
 <head>
 	<meta charset="UTF-8">
